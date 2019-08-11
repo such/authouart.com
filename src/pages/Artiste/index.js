@@ -7,18 +7,14 @@ import tv from '../../assets/tv.png';
 
 import styles from './styles';
 
-const playlistID = 'UUyML6lz9ZrYrGLkCPMIaqlw';
-const apiKey = 'AIzaSyDKdYd3MmI1YSC6kA8kDNk6zGT0zOCQx7s';
-const youtubeUrl = `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${playlistID}&key=${apiKey}&fields=items&part=snippet&maxResults=20`;
-
 const Artiste = React.forwardRef(({ classes }, ref) => {
   const [playlistItems, setPlaylistItems] = useState(null);
   const [mainVideo, setMainVideo] = useState(null);
 
   useEffect(() => {
-    fetch(youtubeUrl)
+    fetch('.netlify/function/list-videos')
       .then(response => response.json())
-      .then(json => setPlaylistItems(json.items));
+      .then(json => setPlaylistItems(json));
   }, []);
 
   if (!playlistItems) {
