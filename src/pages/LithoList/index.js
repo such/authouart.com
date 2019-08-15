@@ -6,31 +6,25 @@ import LithoItem from '../../components/LithoItem';
 
 import styles from './styles';
 import Layout from '../Layout';
+import useFetchLambda from '../../hooks/useFetchLambda';
 
-const LithoList = ({ classes }) => (
-  <Layout withTitle withNav>
-    <div className={classes.list}>
-      <LithoItem
-        litho={{
-          name: 'Name',
-          caption: 'Caption',
-          description: 'Description',
-          metadata: { Year: 2018 },
-          images: []
-        }}
-      />
-      <LithoItem
-        litho={{
-          name: 'Name',
-          caption: 'Caption',
-          description: 'Description',
-          metadata: { Year: 2018 },
-          images: []
-        }}
-      />
-    </div>
-  </Layout>
-);
+const LithoList = ({ classes }) => {
+  const [lithos] = useFetchLambda('list-lithos');
+
+  if (!lithos) {
+    return null;
+  }
+
+  return (
+    <Layout withTitle withNav>
+      <div className={classes.list}>
+        {lithos.map(l => (
+          <LithoItem key={l.id} litho={l} />
+        ))}
+      </div>
+    </Layout>
+  );
+};
 
 LithoList.propTypes = {
   classes: PropTypes.object.isRequired

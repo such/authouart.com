@@ -9,7 +9,6 @@ export default () => ({
   },
   inner: {
     minHeight: '100vh',
-    // minHeight: '100vh',
     position: 'relative',
     margin: 'auto'
   },
@@ -36,20 +35,20 @@ export default () => ({
     }
   },
   bio: {
-    bottom: '-2%',
+    bottom: '4%',
     left: '-4%',
     '&:hover': {
       color: '#FF6419',
-      bottom: 'calc(-2% + 2px)',
+      bottom: 'calc(4% + 2px)',
       left: 'calc(-4% - 2px)'
     }
   },
   lieux: {
-    bottom: '-2%',
+    bottom: '4%',
     right: '-4%',
     '&:hover': {
       color: '#F5F89C',
-      bottom: 'calc(-2% + 2px)',
+      bottom: 'calc(4% + 2px)',
       right: 'calc(-4% + 2px)'
     }
   }

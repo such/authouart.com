@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
 import Bio from '../Bio';
@@ -28,6 +29,8 @@ const Layout = ({ classes, children, withTitle, withNav }) => {
             <Button
               classes={{ root: classnames(classes.button, classes.oeuvres) }}
               disableRipple
+              component={Link}
+              to="/lithographies"
             >
               Œuvres
             </Button>

@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 
+import useFetchLambda from '../../hooks/useFetchLambda';
 import tv from '../../assets/tv.png';
 
 import styles from './styles';
 
 const Artiste = React.forwardRef(({ classes }, ref) => {
-  const [playlistItems, setPlaylistItems] = useState(null);
+  const [playlistItems] = useFetchLambda('list-videos');
   const [mainVideo, setMainVideo] = useState(null);
-
-  useEffect(() => {
-    fetch('.netlify/function/list-videos')
-      .then(response => response.json())
-      .then(json => setPlaylistItems(json));
-  }, []);
 
   if (!playlistItems) {
     return null;
