@@ -20,7 +20,7 @@ import litho7 from '../../assets/litho-7.jpg';
 import interview from './interview.md';
 import styles from './styles';
 
-const Lithographie = React.forwardRef(({ classes }, ref) => {
+const LithographieInterview = React.forwardRef(({ classes }, ref) => {
   const [content, setContent] = useState(null);
   useEffect(() => {
     fetch(interview)
@@ -90,8 +90,8 @@ const Lithographie = React.forwardRef(({ classes }, ref) => {
   );
 });
 
-Lithographie.propTypes = {
+LithographieInterview.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Lithographie);
+export default withStyles(styles)(LithographieInterview);

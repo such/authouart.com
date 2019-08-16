@@ -2,6 +2,11 @@ import { blue } from '../../colors';
 import { avantGardeBold } from '../../fonts';
 
 export default () => ({
+  root: {
+    position: 'absolute',
+    top: 60,
+    left: '15%'
+  },
   title: {
     ...avantGardeBold,
     textShadow: '5px 5px 0 #3E4C94',
@@ -10,10 +15,8 @@ export default () => ({
     zIndex: 10,
     color: '#9CF8D0',
     fontSize: 90,
-    position: 'absolute',
     textTransform: 'uppercase',
-    top: '7%',
-    left: '-7%'
+    lineHeight: 1.2
   },
   titleA: {
     MozFontFeatureSettings: '"salt"',
@@ -22,14 +25,13 @@ export default () => ({
   },
   subtitle: {
     ...avantGardeBold,
-    position: 'absolute',
+    position: 'relative',
     color: '#F5F89C',
     fontSize: 30,
     WebkitTextStrokeWidth: '1px',
     WebkitTextStrokeColor: blue,
     textShadow: `2px 2px 0 ${blue}`,
     zIndex: 10,
-    top: '3%',
-    left: '-1%'
+    left: 35
   }
 });

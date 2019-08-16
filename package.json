@@ -19,6 +19,7 @@
     "stripe": "^7.7.0"
   },
   "scripts": {
+    "run": "netlify dev --config ./webpack.functions.js",
     "start": "react-scripts start",
     "serve": "netlify-lambda serve src/lambda --config ./webpack.functions.js",
     "build": "yarn build:app && yarn build:lambda",

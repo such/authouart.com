@@ -3,14 +3,18 @@ import { avantGardeBold } from '../../fonts';
 
 export default () => ({
   root: {
-    padding: '2% 20%',
+    padding: '0 20%',
     width: '100%',
     height: '100vh'
   },
   inner: {
     minHeight: '100vh',
     position: 'relative',
-    margin: 'auto'
+    margin: 'auto',
+
+    '.withPadding &': {
+      paddingTop: 230
+    }
   },
   button: {
     ...avantGardeBold,

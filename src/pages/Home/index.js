@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import Lithographie from '../Lithographie';
+import Lithographie from '../LithographieInterview';
 import Artiste from '../Artiste';
 import Menu from '../Menu';
 

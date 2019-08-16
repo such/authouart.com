@@ -12,26 +12,6 @@ export default () => ({
     maxHeight: 160,
     marginBottom: 10
   },
-  year: {
-    color: '#0f1756',
-    fontSize: 10
-  },
-  name: {
-    ...avantGardeBold,
-    fontSize: 14,
-    color: '#0f1756'
-  },
-  caption: {
-    color: '#818181',
-    fontSize: 12,
-    marginBottom: 5
-  },
-  description: {
-    color: '#969696',
-    fontSize: 12,
-    lineHeight: '16px',
-    marginBottom: 20
-  },
   button: {
     ...avantGardeBold,
     color: '#0f1756',
