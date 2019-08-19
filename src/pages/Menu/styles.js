@@ -9,7 +9,8 @@ export default () => ({
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'top left',
-    paddingTop: '77.7%'
+    paddingTop: '77.7%',
+    marginTop: -110
   },
   innerButton: {
     cursor: 'pointer',

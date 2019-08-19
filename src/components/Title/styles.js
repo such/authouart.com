@@ -3,9 +3,7 @@ import { avantGardeBold } from '../../fonts';
 
 export default () => ({
   root: {
-    position: 'absolute',
-    top: 60,
-    left: '15%'
+    marginLeft: '-5%'
   },
   title: {
     ...avantGardeBold,

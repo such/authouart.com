@@ -29,12 +29,8 @@ const Litho = ({ classes, match }) => {
   } = litho;
 
   return (
-    <Layout withNav withTitle withPadding>
-      <Breadcrumbs
-        separator=">"
-        aria-label="breadcrumb"
-        classes={{ root: classes.breadcrumbs }}
-      >
+    <Layout withNav withTitle>
+      <Breadcrumbs separator=">" aria-label="breadcrumb">
         <Link to="/">AUTHOUART</Link>
         <Link to="/lithographies">Œuvres</Link>
         <span className={classes.litho}>

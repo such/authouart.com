@@ -1,6 +1,7 @@
 import { avantGardeBold } from '../../fonts';
 
 export default () => ({
+  root: {},
   year: {
     color: '#0f1756',
     fontSize: 12

@@ -5,6 +5,7 @@ import { Button } from '@material-ui/core';
 
 import useFetchLambda from '../../hooks/useFetchLambda';
 import tv from '../../assets/tv.png';
+import Layout from '../Layout';
 
 import styles from './styles';
 
@@ -22,7 +23,7 @@ const Artiste = React.forwardRef(({ classes }, ref) => {
   }
 
   return (
-    <div className={classes.root} ref={ref}>
+    <Layout classes={{ content: classes.root }} ref={ref} withNav>
       <div className={classes.main}>
         <iframe
           width="580"
@@ -50,7 +51,7 @@ const Artiste = React.forwardRef(({ classes }, ref) => {
           </Button>
         ))}
       </div>
-    </div>
+    </Layout>
   );
 });
 

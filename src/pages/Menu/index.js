@@ -14,7 +14,7 @@ import Layout from '../Layout';
 import styles from './styles';
 
 const Menu = ({ classes, scrollToLitho, scrollToArtiste }) => (
-  <Layout classes={{ inner: classes.inner }} withNav withTitle>
+  <Layout classes={{ content: classes.inner }} withNav withTitle>
     <div
       className={classnames(classes.innerButton, classes.litho)}
       onClick={scrollToLitho}

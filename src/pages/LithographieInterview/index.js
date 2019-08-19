@@ -17,6 +17,7 @@ import litho5 from '../../assets/litho-5.jpg';
 import litho6 from '../../assets/litho-6.jpg';
 import litho7 from '../../assets/litho-7.jpg';
 
+import Layout from '../Layout';
 import interview from './interview.md';
 import styles from './styles';
 
@@ -28,7 +29,7 @@ const LithographieInterview = React.forwardRef(({ classes }, ref) => {
       .then(text => setContent(text));
   }, []);
   return (
-    <div className={classes.root} ref={ref}>
+    <Layout classes={{ root: classes.root }} ref={ref} withNav>
       <LithoPicture
         src={litho1}
         title="1. Authouart, séance de croquis à vue, New York"
@@ -86,7 +87,7 @@ const LithographieInterview = React.forwardRef(({ classes }, ref) => {
         escapeHtml={false}
         className={classes.interview}
       />
-    </div>
+    </Layout>
   );
 });
 

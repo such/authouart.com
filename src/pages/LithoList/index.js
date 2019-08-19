@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { Breadcrumbs } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 import LithoItem from '../../components/LithoItem';
 
@@ -17,6 +19,14 @@ const LithoList = ({ classes }) => {
 
   return (
     <Layout withTitle withNav>
+      <Breadcrumbs
+        separator=">"
+        aria-label="breadcrumb"
+        classes={{ root: classes.breadcrumbs }}
+      >
+        <Link to="/">AUTHOUART</Link>
+        <Link to="/lithographies">Œuvres</Link>
+      </Breadcrumbs>
       <div className={classes.list}>
         {lithos.map(l => (
           <LithoItem key={l.id} litho={l} />

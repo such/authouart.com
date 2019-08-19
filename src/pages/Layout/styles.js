@@ -8,17 +8,18 @@ export default () => ({
     height: '100vh'
   },
   inner: {
-    minHeight: '100vh',
+    minHeight: 'calc(100vh - 60px)',
     position: 'relative',
     margin: 'auto',
-
-    '.withPadding &': {
-      paddingTop: 230
-    }
+    paddingTop: 60
+  },
+  content: {
+    position: 'relative'
   },
   button: {
     ...avantGardeBold,
     fontSize: 25,
+    zIndex: 10,
     textTransform: 'uppercase',
     position: 'absolute',
     color: blue,
@@ -32,11 +33,14 @@ export default () => ({
   oeuvres: {
     top: '4%',
     right: '-4%',
-    '&:hover': {
+    '&:hover $oeuvresLabel': {
       color: '#9CF8D0',
-      top: 'calc(4% - 2px)',
-      right: 'calc(-4% + 2px)'
+      top: -2,
+      right: 2
     }
+  },
+  oeuvresLabel: {
+    position: 'relative'
   },
   bio: {
     bottom: '4%',
@@ -55,5 +59,9 @@ export default () => ({
       bottom: 'calc(4% + 2px)',
       right: 'calc(-4% + 2px)'
     }
+  },
+  caddie: {
+    height: 25,
+    marginLeft: 10
   }
 });

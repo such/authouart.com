@@ -11,21 +11,6 @@ export default theme => ({
       maxWidth: 1200
     }
   },
-  breadcrumbs: {
-    ...avantGarde,
-    color: '#818181',
-    fontFamily: 'ITC Avant Garde Std - Bk',
-    fontSize: 12,
-    marginBottom: 10,
-    '& a': {
-      color: 'inherit',
-      textDecoration: 'none'
-    },
-    '& .MuiBreadcrumbs-separator': {
-      marginLeft: 4,
-      marginRight: 4
-    }
-  },
   picture: {
     width: '50%',
     backgroundSize: 'contain',
