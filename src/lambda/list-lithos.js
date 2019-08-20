@@ -16,11 +16,19 @@ export async function handler() {
       };
     }
 
-    const products = await stripe.products.list();
+    const [skus, products] = await Promise.all([
+      stripe.skus.list({ limit: 100 }),
+      stripe.products.list({ limit: 100 })
+    ]);
+
+    const data = skus.data.map(sku => {
+      sku.product = products.data.find(p => p.id === sku.product);
+      return sku;
+    });
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ data: products.data })
+      body: JSON.stringify({ data })
     };
   } catch (err) {
     console.log(err); // output to netlify function log

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Button, Breadcrumbs } from '@material-ui/core';
@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import useFetchLambda from '../../hooks/useFetchLambda';
 import LithoDescription from '../../components/LithoDescription';
 import whiteCaddie from '../../assets/white-caddie.png';
+import formatPrice from '../../lib/formatPrice';
+import StripeContext from '../../contexts/stripe';
 
 import styles from './styles';
 import Layout from '../Layout';
@@ -14,19 +16,33 @@ import Layout from '../Layout';
 const Litho = ({ classes, match }) => {
   const [data] = useFetchLambda('list-lithos');
   const { name } = match.params;
+  const { redirectToCheckout } = useContext(StripeContext);
+  const [error, setError] = useState(null);
 
   if (!data) {
     return null;
   }
-  const litho = data.find(l => l.name === name);
+  const litho = data.find(l => l.product.name === name);
 
   if (!litho) {
     return null;
   }
+  const { product, price, id } = litho;
   const {
     images,
     metadata: { Year }
-  } = litho;
+  } = product;
+
+  const buy = () => {
+    redirectToCheckout({
+      items: [{ sku: id, quantity: 1 }],
+      successUrl: 'https://authouart.fr/success',
+      cancelUrl: 'https://authouart.fr/cancel',
+      billingAddressCollection: 'required'
+    }).then(result => {
+      setError(result.error.message);
+    });
+  };
 
   return (
     <Layout withNav withTitle>
@@ -44,13 +60,15 @@ const Litho = ({ classes, match }) => {
           alt={name}
         />
         <div className={classes.content}>
+          {error && <span>{error}</span>}
           <LithoDescription
-            litho={litho}
+            product={product}
             classes={{ root: classes.description }}
           />
           <div className={classes.buy}>
-            <span className={classes.price}>2000,00 €</span>
+            <span className={classes.price}>{formatPrice(price)}</span>
             <Button
+              onClick={buy}
               classes={{
                 root: classes.buyButton,
                 label: classes.buyButtonLabel

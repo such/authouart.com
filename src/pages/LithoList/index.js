@@ -25,7 +25,7 @@ const LithoList = ({ classes }) => {
         classes={{ root: classes.breadcrumbs }}
       >
         <Link to="/">AUTHOUART</Link>
-        <Link to="/lithographies">Œuvres</Link>
+        Œuvres
       </Breadcrumbs>
       <div className={classes.list}>
         {lithos.map(l => (

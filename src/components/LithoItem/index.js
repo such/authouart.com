@@ -4,24 +4,27 @@ import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
+import formatPrice from '../../lib/formatPrice';
 import LithoDescription from '../LithoDescription';
 import caddie from '../../assets/caddie.png';
 
 import styles from './styles';
 
 const LithoItem = ({ classes, litho }) => {
-  const { name, images } = litho;
+  const { product, price } = litho;
+  const { name, images } = product;
 
   return (
     <div className={classes.root}>
       <img className={classes.img} src={images[0]} alt={name} />
-      <LithoDescription litho={litho} />
+      <LithoDescription product={product} />
       <Button
         classes={{ root: classes.button }}
         component={Link}
         to={`/lithographies/${name}`}
       >
-        2000 € <img src={caddie} alt="caddie" className={classes.caddie} />
+        {formatPrice(price)}
+        <img src={caddie} alt="caddie" className={classes.caddie} />
       </Button>
     </div>
   );

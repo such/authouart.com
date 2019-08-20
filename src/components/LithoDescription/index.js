@@ -4,8 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 
 import styles from './styles';
 
-const LithoDescription = ({ classes, litho }) => {
-  const { name, caption, description, metadata } = litho;
+const LithoDescription = ({ classes, product }) => {
+  const { name, caption, description, metadata } = product;
   const { Year } = metadata;
 
   return (
@@ -20,7 +20,7 @@ const LithoDescription = ({ classes, litho }) => {
 
 LithoDescription.propTypes = {
   classes: PropTypes.object.isRequired,
-  litho: PropTypes.object.isRequired
+  product: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(LithoDescription);

@@ -8,10 +8,11 @@ export default () => ({
     height: '100vh'
   },
   inner: {
-    minHeight: 'calc(100vh - 60px)',
+    minHeight: 'calc(100vh - 40px)',
     position: 'relative',
     margin: 'auto',
-    paddingTop: 60
+    paddingTop: 30,
+    marginBottom: 10
   },
   content: {
     position: 'relative'
@@ -19,7 +20,7 @@ export default () => ({
   button: {
     ...avantGardeBold,
     fontSize: 25,
-    zIndex: 10,
+    zIndex: 30,
     textTransform: 'uppercase',
     position: 'absolute',
     color: blue,

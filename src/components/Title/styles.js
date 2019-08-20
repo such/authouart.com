@@ -3,7 +3,10 @@ import { avantGardeBold } from '../../fonts';
 
 export default () => ({
   root: {
-    marginLeft: '-5%'
+    marginLeft: '-7%',
+    zIndex: 20,
+    position: 'relative',
+    marginBottom: 12
   },
   title: {
     ...avantGardeBold,
@@ -14,7 +17,7 @@ export default () => ({
     color: '#9CF8D0',
     fontSize: 90,
     textTransform: 'uppercase',
-    lineHeight: 1.2
+    lineHeight: 1
   },
   titleA: {
     MozFontFeatureSettings: '"salt"',
@@ -30,6 +33,6 @@ export default () => ({
     WebkitTextStrokeColor: blue,
     textShadow: `2px 2px 0 ${blue}`,
     zIndex: 10,
-    left: 35
+    left: 60
   }
 });
