@@ -33,7 +33,7 @@ export default () => ({
   },
   oeuvres: {
     top: '4%',
-    right: '-4%',
+    right: 'calc(-35px - 4%)',
     '&:hover $oeuvresLabel': {
       color: '#9CF8D0',
       top: -2,
@@ -63,6 +63,8 @@ export default () => ({
   },
   caddie: {
     height: 25,
-    marginLeft: 10
+    marginLeft: 10,
+    position: 'relative',
+    top: -3
   }
 });

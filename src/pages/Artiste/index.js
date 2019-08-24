@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 
 import useFetchLambda from '../../hooks/useFetchLambda';
-import tv from '../../assets/tv.png';
 import Layout from '../Layout';
 
 import styles from './styles';
@@ -25,32 +24,31 @@ const Artiste = React.forwardRef(({ classes }, ref) => {
   return (
     <Layout classes={{ content: classes.root }} ref={ref} withNav>
       <div className={classes.main}>
-        <iframe
-          width="580"
-          height="430"
-          title="main"
-          src={`https://www.youtube.com/embed/${mainVideo.snippet.resourceId.videoId}`}
-          frameBorder="0"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowFullScreen
-          className={classes.iframe}
-        />
-        <img src={tv} alt="tv" className={classes.tv} />
+        <div className={classes.playlist}>
+          {playlistItems.map(item => (
+            <Button
+              key={item.id}
+              classes={{ root: classes.preview }}
+              onClick={() => setMainVideo(item)}
+            >
+              <img
+                src={item.snippet.thumbnails.default.url}
+                alt={item.snippet.title}
+              />
+            </Button>
+          ))}
+        </div>
       </div>
-      <div className={classes.playlist}>
-        {playlistItems.map(item => (
-          <Button
-            key={item.id}
-            classes={{ root: classes.preview }}
-            onClick={() => setMainVideo(item)}
-          >
-            <img
-              src={item.snippet.thumbnails.default.url}
-              alt={item.snippet.title}
-            />
-          </Button>
-        ))}
-      </div>
+      <iframe
+        width="76%"
+        height="52%"
+        title="main"
+        src={`https://www.youtube.com/embed/${mainVideo.snippet.resourceId.videoId}`}
+        frameBorder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowFullScreen
+        className={classes.iframe}
+      />
     </Layout>
   );
 });

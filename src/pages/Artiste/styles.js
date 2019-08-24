@@ -1,35 +1,42 @@
-export default () => ({
+import cinema from '../../assets/cinema.png';
+
+export default {
   root: {
     height: '100vh',
     width: '100%',
-    padding: '2% 10%',
+    padding: 0,
     display: 'flex',
     position: 'relative'
   },
+  main: {
+    backgroundImage: `url(${cinema})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'contain',
+    pointerEvents: 'none',
+    zIndex: 2,
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+  },
   playlist: {
-    position: 'absolute',
-    right: '10%',
-    bottom: 50,
     display: 'flex',
     flexDirection: 'column',
     maxHeight: 700,
-    overflow: 'auto',
-    padding: '0 20px'
+    overflowY: 'scroll',
+    pointerEvents: 'all'
   },
   preview: {
-    boxShadow: '3 1 9 rgba(0, 0, 0, 0.7)'
-  },
-  tv: {
-    zIndex: 2,
-    width: 900,
-    position: 'absolute',
-    pointerEvents: 'none',
-    bottom: 0,
-    left: '14%'
+    boxShadow: '9px 1px 27px rgba(0, 0, 0, 0.7)',
+    border: '2px solid #FFFFFF',
+    padding: 0,
+    marginBottom: 10
   },
   iframe: {
-    left: 'calc(14% + 80px)',
-    bottom: 235,
+    left: '13%',
+    bottom: 225,
     position: 'absolute'
   }
-});
+};

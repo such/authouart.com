@@ -9,7 +9,7 @@ console.log(mock);
 
 export async function handler() {
   try {
-    if (mock) {
+    if (mock === 'true') {
       return {
         statusCode: 200,
         body: JSON.stringify({ data: mockedData })

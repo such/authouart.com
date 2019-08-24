@@ -10,7 +10,7 @@ const mock = process.env.MOCK;
 
 export async function handler() {
   try {
-    if (mock) {
+    if (mock === 'true') {
       return {
         statusCode: 200,
         body: JSON.stringify({ data: mockedData })
