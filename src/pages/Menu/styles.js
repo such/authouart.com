@@ -10,7 +10,7 @@ export default () => ({
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'top left',
     paddingTop: '77.7%',
-    marginTop: -142,
+    marginTop: -172,
     zIndex: 0
   },
   innerButton: {

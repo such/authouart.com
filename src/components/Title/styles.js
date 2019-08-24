@@ -7,7 +7,8 @@ export default () => ({
     zIndex: 20,
     position: 'relative',
     marginBottom: 12,
-    textDecoration: 'none'
+    textDecoration: 'none',
+    display: 'block'
   },
   title: {
     ...avantGardeBold,
@@ -16,9 +17,9 @@ export default () => ({
     WebkitTextStrokeColor: '#933E73',
     zIndex: 10,
     color: '#9CF8D0',
-    fontSize: 90,
+    fontSize: 100,
     textTransform: 'uppercase',
-    lineHeight: 1
+    lineHeight: 1.1
   },
   titleA: {
     MozFontFeatureSettings: '"salt"',

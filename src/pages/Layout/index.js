@@ -17,7 +17,7 @@ const Layout = React.forwardRef(
     const [bioOpen, setBioOpen] = useState(false);
     const [lieuxOpen, setLieuxOpen] = useState(false);
     return (
-      <div className={classnames(classes.root, { withTitle })} ref={ref}>
+      <div className={classes.root} ref={ref}>
         {withNav && (
           <>
             <Bio onClose={() => setBioOpen(false)} open={bioOpen} />
