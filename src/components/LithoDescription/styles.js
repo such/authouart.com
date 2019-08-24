@@ -1,7 +1,10 @@
 import { avantGardeBold } from '../../fonts';
 
 export default () => ({
-  root: {},
+  root: {
+    marginBottom: 8,
+    marginRight: 15
+  },
   year: {
     color: '#0f1756',
     fontSize: 12
@@ -13,8 +16,8 @@ export default () => ({
   },
   caption: {
     color: '#818181',
-    fontSize: 14,
-    marginBottom: 5
+    fontSize: 13,
+    marginBottom: 8
   },
   description: {
     color: '#969696',

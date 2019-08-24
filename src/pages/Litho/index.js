@@ -27,10 +27,9 @@ const Litho = ({ classes, match }) => {
   if (!litho) {
     return null;
   }
-  const { product, price, id } = litho;
+  const { product, price, id, image } = litho;
   const {
-    images,
-    metadata: { Year }
+    metadata: { year }
   } = product;
 
   const buy = () => {
@@ -50,12 +49,12 @@ const Litho = ({ classes, match }) => {
         <Link to="/">AUTHOUART</Link>
         <Link to="/lithographies">Œuvres</Link>
         <span className={classes.litho}>
-          {Year} - {name}
+          {year} - {name}
         </span>
       </Breadcrumbs>
       <div className={classes.root}>
         <div
-          style={{ backgroundImage: `url(${images[0]})` }}
+          style={{ backgroundImage: `url(${image})` }}
           className={classes.picture}
           alt={name}
         />

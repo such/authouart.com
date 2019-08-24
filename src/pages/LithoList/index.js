@@ -19,18 +19,16 @@ const LithoList = ({ classes }) => {
 
   return (
     <Layout withTitle withNav>
-      <Breadcrumbs
-        separator=">"
-        aria-label="breadcrumb"
-        classes={{ root: classes.breadcrumbs }}
-      >
+      <Breadcrumbs separator=">" aria-label="breadcrumb">
         <Link to="/">AUTHOUART</Link>
-        Œuvres
+        <span>Œuvres</span>
       </Breadcrumbs>
       <div className={classes.list}>
-        {lithos.map(l => (
-          <LithoItem key={l.id} litho={l} />
-        ))}
+        {lithos
+          .sort((l, m) => l.product.metadata.year - m.product.metadata.year)
+          .map(l => (
+            <LithoItem key={l.id} litho={l} />
+          ))}
       </div>
     </Layout>
   );

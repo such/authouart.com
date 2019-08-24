@@ -11,18 +11,18 @@ import caddie from '../../assets/caddie.png';
 import styles from './styles';
 
 const LithoItem = ({ classes, litho }) => {
-  const { product, price } = litho;
-  const { name, images } = product;
+  const { product, price, image } = litho;
+  const { name } = product;
+
+  const link = `/lithographies/${name}`;
 
   return (
     <div className={classes.root}>
-      <img className={classes.img} src={images[0]} alt={name} />
+      <Link to={link}>
+        <img className={classes.img} src={image} alt={name} />
+      </Link>
       <LithoDescription product={product} />
-      <Button
-        classes={{ root: classes.button }}
-        component={Link}
-        to={`/lithographies/${name}`}
-      >
+      <Button classes={{ root: classes.button }} component={Link} to={link}>
         {formatPrice(price)}
         <img src={caddie} alt="caddie" className={classes.caddie} />
       </Button>

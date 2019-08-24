@@ -1,6 +1,8 @@
 export default () => ({
   list: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    overflow: 'auto',
+    marginTop: 10
   }
 });
