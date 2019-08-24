@@ -19,20 +19,10 @@ const Litho = ({ classes, match }) => {
   const { redirectToCheckout } = useContext(StripeContext);
   const [error, setError] = useState(null);
 
-  if (!data) {
-    return null;
-  }
-  const litho = data.find(l => l.product.name === name);
-
-  if (!litho) {
-    return null;
-  }
-  const { product, price, id, image } = litho;
-  const {
-    metadata: { year }
-  } = product;
+  const litho = data && data.find(l => l.product.name === name);
 
   const buy = () => {
+    const { id } = litho;
     redirectToCheckout({
       items: [{ sku: id, quantity: 1 }],
       successUrl: 'https://authouart.fr/success',
@@ -43,56 +33,73 @@ const Litho = ({ classes, match }) => {
     });
   };
 
-  return (
-    <Layout withNav withTitle>
-      <Breadcrumbs separator=">" aria-label="breadcrumb">
-        <Link to="/">AUTHOUART</Link>
-        <Link to="/lithographies">Œuvres</Link>
-        <span className={classes.litho}>
-          {year} - {name}
-        </span>
-      </Breadcrumbs>
-      <div className={classes.root}>
-        <div
-          style={{ backgroundImage: `url(${image})` }}
-          className={classes.picture}
-          alt={name}
-        />
-        <div className={classes.content}>
-          {error && <span>{error}</span>}
-          <LithoDescription
-            product={product}
-            classes={{ root: classes.description }}
+  const renderLitho = () => {
+    const { product, price, image } = litho;
+    const {
+      metadata: { year }
+    } = product;
+
+    return (
+      <>
+        <Breadcrumbs separator=">" aria-label="breadcrumb">
+          <Link to="/">AUTHOUART</Link>
+          <Link to="/lithographies">Œuvres</Link>
+          <span className={classes.litho}>
+            {year} - {name}
+          </span>
+        </Breadcrumbs>
+        <div className={classes.root}>
+          <div
+            style={{ backgroundImage: `url(${image})` }}
+            className={classes.picture}
+            alt={name}
           />
-          <div className={classes.buy}>
-            <span className={classes.price}>{formatPrice(price)}</span>
-            <Button
-              onClick={buy}
-              classes={{
-                root: classes.buyButton,
-                label: classes.buyButtonLabel
-              }}
-            >
-              Acheter
-              <img src={whiteCaddie} alt="caddie" className={classes.caddie} />
-            </Button>
-          </div>
-          <div className={classes.reinsurance}>
-            <h3>AUTHENTIFICATION -</h3>
-            <p>
-              Signée et numérotée par l’artiste, sous contrôle d’un huissier de
-              justice
-            </p>
-            <h3>PAIEMENT SÉCURISÉ -</h3>
-            <p>
-              Vous pouvez régler par carte bancaire. Transaction sécurisé par
-              validation 3D secure.
-            </p>
-            <h3>LIVRAISON ASSURÉE -</h3>
-            <p>Nous livrons via des transporteurs spécialisés.</p>
+          <div className={classes.content}>
+            {error && <span>{error}</span>}
+            <LithoDescription
+              product={product}
+              classes={{ root: classes.description }}
+            />
+            <div className={classes.buy}>
+              <span className={classes.price}>{formatPrice(price)}</span>
+              <Button
+                onClick={buy}
+                classes={{
+                  root: classes.buyButton,
+                  label: classes.buyButtonLabel
+                }}
+              >
+                Acheter
+                <img
+                  src={whiteCaddie}
+                  alt="caddie"
+                  className={classes.caddie}
+                />
+              </Button>
+            </div>
+            <div className={classes.reinsurance}>
+              <h3>AUTHENTIFICATION -</h3>
+              <p>
+                Signée et numérotée par l’artiste, sous contrôle d’un huissier
+                de justice
+              </p>
+              <h3>PAIEMENT SÉCURISÉ -</h3>
+              <p>
+                Vous pouvez régler par carte bancaire. Transaction sécurisé par
+                validation 3D secure.
+              </p>
+              <h3>LIVRAISON ASSURÉE -</h3>
+              <p>Nous livrons via des transporteurs spécialisés.</p>
+            </div>
           </div>
         </div>
-      </div>
+      </>
+    );
+  };
+
+  return (
+    <Layout withNav withTitle>
+      {litho && renderLitho()}
     </Layout>
   );
 };

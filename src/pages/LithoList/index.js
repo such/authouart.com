@@ -13,23 +13,21 @@ import useFetchLambda from '../../hooks/useFetchLambda';
 const LithoList = ({ classes }) => {
   const [lithos] = useFetchLambda('list-lithos');
 
-  if (!lithos) {
-    return null;
-  }
-
   return (
     <Layout withTitle withNav>
       <Breadcrumbs separator=">" aria-label="breadcrumb">
         <Link to="/">AUTHOUART</Link>
         <span>Œuvres</span>
       </Breadcrumbs>
-      <div className={classes.list}>
-        {lithos
-          .sort((l, m) => l.product.metadata.year - m.product.metadata.year)
-          .map(l => (
-            <LithoItem key={l.id} litho={l} />
-          ))}
-      </div>
+      {lithos && (
+        <div className={classes.list}>
+          {lithos
+            .sort((l, m) => l.product.metadata.year - m.product.metadata.year)
+            .map(l => (
+              <LithoItem key={l.id} litho={l} />
+            ))}
+        </div>
+      )}
     </Layout>
   );
 };
