@@ -6,7 +6,8 @@ export default () => ({
     marginLeft: '-7%',
     zIndex: 20,
     position: 'relative',
-    marginBottom: 12
+    marginBottom: 12,
+    textDecoration: 'none'
   },
   title: {
     ...avantGardeBold,

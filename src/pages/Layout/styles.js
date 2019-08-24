@@ -22,43 +22,40 @@ export default () => ({
     fontSize: 25,
     zIndex: 30,
     textTransform: 'uppercase',
-    position: 'absolute',
+    position: 'fixed',
     color: blue,
     '&:hover': {
       backgroundColor: 'transparent',
       textShadow: `2px 2px 0 ${blue}`,
       WebkitTextStrokeWidth: '1px',
       WebkitTextStrokeColor: blue
+    },
+    '&:hover $buttonLabel': {
+      color: '#9CF8D0'
     }
   },
   oeuvres: {
     top: '4%',
-    right: 'calc(-35px - 4%)',
-    '&:hover $oeuvresLabel': {
-      color: '#9CF8D0',
-      top: -2,
-      right: 2
+    right: 'calc(4% - 40px)',
+    '&:hover $buttonLabel': {
+      color: '#9CF8D0'
     }
   },
-  oeuvresLabel: {
+  buttonLabel: {
     position: 'relative'
   },
   bio: {
     bottom: '4%',
-    left: '-4%',
-    '&:hover': {
-      color: '#FF6419',
-      bottom: 'calc(4% + 2px)',
-      left: 'calc(-4% - 2px)'
+    left: '4%',
+    '&:hover $buttonLabel': {
+      color: '#FF6419'
     }
   },
   lieux: {
     bottom: '4%',
-    right: '-4%',
-    '&:hover': {
-      color: '#F5F89C',
-      bottom: 'calc(4% + 2px)',
-      right: 'calc(-4% + 2px)'
+    right: '4%',
+    '&:hover $buttonLabel': {
+      color: '#F5F89C'
     }
   },
   caddie: {

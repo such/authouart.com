@@ -29,7 +29,7 @@ const LithographieInterview = React.forwardRef(({ classes }, ref) => {
       .then(text => setContent(text));
   }, []);
   return (
-    <Layout classes={{ root: classes.root }} ref={ref} withNav>
+    <Layout classes={{ root: classes.root }} ref={ref}>
       <LithoPicture
         src={litho1}
         title="1. Authouart, séance de croquis à vue, New York"

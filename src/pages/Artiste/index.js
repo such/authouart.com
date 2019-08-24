@@ -22,7 +22,7 @@ const Artiste = React.forwardRef(({ classes }, ref) => {
   }
 
   return (
-    <Layout classes={{ content: classes.root }} ref={ref} withNav>
+    <Layout classes={{ content: classes.root }} ref={ref}>
       <div className={classes.main}>
         <div className={classes.playlist}>
           {playlistItems.map(item => (

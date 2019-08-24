@@ -34,7 +34,7 @@ const Layout = React.forwardRef(
                 component={Link}
                 to="/lithographies"
               >
-                <span className={classes.oeuvresLabel}>Œuvres</span>
+                <span className={classes.buttonLabel}>Œuvres</span>
                 <img
                   src={blackCaddie}
                   alt="caddie"
@@ -45,13 +45,13 @@ const Layout = React.forwardRef(
                 classes={{ root: classnames(classes.button, classes.bio) }}
                 onClick={() => setBioOpen(true)}
               >
-                Bio
+                <span className={classes.buttonLabel}>Bio</span>
               </Button>
               <Button
                 classes={{ root: classnames(classes.button, classes.lieux) }}
                 onClick={() => setLieuxOpen(true)}
               >
-                Lieux d&apos;expo
+                <span className={classes.buttonLabel}>Lieux d&apos;expo</span>
               </Button>
             </>
           )}
