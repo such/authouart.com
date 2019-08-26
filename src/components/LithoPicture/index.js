@@ -12,10 +12,14 @@ let zIndex = 2;
 
 const LithoPicture = ({ classes, src, title, width }) => {
   const element = useRef(null);
+  let shiftX = 0;
+  let shiftY = 0;
+  let offsetX = 0;
+  let offsetY = 0;
 
-  const moveAt = (pageX, pageY) => {
-    element.current.style.left = `${pageX - element.current.offsetWidth / 2}px`;
-    element.current.style.top = `${pageY - element.current.offsetHeight / 2}px`;
+  const moveAt = (clientX, clientY) => {
+    element.current.style.left = `${clientX - shiftX - offsetX}px`;
+    element.current.style.top = `${clientY - shiftY - offsetY}px`;
   };
 
   const onDrag = ({ clientX, clientY }) => {
@@ -32,6 +36,12 @@ const LithoPicture = ({ classes, src, title, width }) => {
   const onDragStart = event => {
     const img = new Image();
     event.dataTransfer.setDragImage(img, 0, 0);
+
+    offsetX = event.target.parentNode.getBoundingClientRect().left;
+    offsetY = event.target.parentNode.getBoundingClientRect().top;
+
+    shiftX = event.clientX - element.current.getBoundingClientRect().left;
+    shiftY = event.clientY - element.current.getBoundingClientRect().top;
 
     bringToFront();
   };
