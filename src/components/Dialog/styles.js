@@ -3,12 +3,12 @@ import { americanTypewriterBold, americanTypewriter } from '../../fonts';
 export default () => ({
   root: {},
   paper: {
-    padding: '0 100px',
+    padding: '0 50px',
     maxWidth: '80%'
   },
   title: {
     ...americanTypewriterBold,
-    paddingTop: 100,
+    padding: '100px 50px 0 50px',
     fontSize: 36,
     marginBottom: 30
   },
@@ -18,7 +18,11 @@ export default () => ({
     right: 10
   },
   content: {
+    padding: 0
+  },
+  md: {
     ...americanTypewriter,
+    padding: '0 50px',
     fontSize: 24,
     height: '50vh',
     overflow: 'hidden',

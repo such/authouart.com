@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactMD from 'react-markdown';
-import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
-
 import { Button } from '@material-ui/core';
 import ArrowRightIcon from '@material-ui/icons/ArrowRightAlt';
 
 import LithoPicture from '../../components/LithoPicture';
+import Lithographies from '../Lithographies';
 
 import litho1 from '../../assets/litho-1.jpg';
 import litho2 from '../../assets/litho-2.jpg';
@@ -23,6 +22,8 @@ import styles from './styles';
 
 const LithographieInterview = React.forwardRef(({ classes }, ref) => {
   const [content, setContent] = useState(null);
+  const [lithographiesOpen, setLithographiesOpen] = useState(false);
+
   useEffect(() => {
     fetch(interview)
       .then(response => response.text())
@@ -30,6 +31,10 @@ const LithographieInterview = React.forwardRef(({ classes }, ref) => {
   }, []);
   return (
     <Layout classes={{ root: classes.root }} ref={ref}>
+      <Lithographies
+        onClose={() => setLithographiesOpen(false)}
+        open={lithographiesOpen}
+      />
       <LithoPicture
         src={litho1}
         title="1. Authouart, séance de croquis à vue, New York"
@@ -69,8 +74,7 @@ const LithographieInterview = React.forwardRef(({ classes }, ref) => {
       <div className={classes.buttons}>
         <Button
           classes={{ root: classes.button }}
-          to="/lithographies"
-          component={Link}
+          onClick={() => setLithographiesOpen(true)}
         >
           <ArrowRightIcon />
           <span className={classes.buttonLabel}>Les lithographies</span>

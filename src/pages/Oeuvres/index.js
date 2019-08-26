@@ -10,7 +10,7 @@ import styles from './styles';
 import Layout from '../Layout';
 import useFetchLambda from '../../hooks/useFetchLambda';
 
-const LithoList = ({ classes }) => {
+const Oeuvres = ({ classes }) => {
   const [lithos] = useFetchLambda('list-lithos');
 
   return (
@@ -32,8 +32,8 @@ const LithoList = ({ classes }) => {
   );
 };
 
-LithoList.propTypes = {
+Oeuvres.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(LithoList);
+export default withStyles(styles)(Oeuvres);

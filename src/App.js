@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core';
 
 import StripeContext from './contexts/stripe';
 import Home from './pages/Home';
-import LithoList from './pages/LithoList';
+import Oeuvres from './pages/Oeuvres';
 import Litho from './pages/Litho';
 import './App.css';
 
@@ -28,8 +28,8 @@ const App = ({ classes }) => {
         {loading && <div className={classes.loading} />}
         <div className={classnames(classes.content, { loading })}>
           <Route path="/" exact component={Home} />
-          <Route exact path="/lithographies" component={LithoList} />
-          <Route exact path="/lithographies/:name" component={Litho} />
+          <Route exact path="/oeuvres" component={Oeuvres} />
+          <Route exact path="/oeuvres/:name" component={Litho} />
         </div>
       </Router>
     </StripeContext.Provider>

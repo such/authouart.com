@@ -40,11 +40,14 @@ const Dialog = ({ classes, title, source, open, onClose }) => {
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      <DialogContent>
+      <DialogContent
+        onWheel={() => setFull(true)}
+        classes={{ root: classes.content }}
+      >
         <ReactMD
           source={content}
           escapeHtml={false}
-          className={classnames(classes.content, { full })}
+          className={classnames(classes.md, { full })}
         />
         <Button
           onClick={() => setFull(true)}
