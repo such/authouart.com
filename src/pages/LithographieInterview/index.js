@@ -79,7 +79,7 @@ const LithographieInterview = React.forwardRef(({ classes }, ref) => {
           <ArrowRightIcon />
           <span className={classes.buttonLabel}>Les lithographies</span>
         </Button>
-        <Button classes={{ root: classes.button }}>
+        <Button classes={{ root: classes.button }} style={{ display: 'none' }}>
           <ArrowRightIcon />
           <span className={classes.buttonLabel}>
             Qu&apos;est-ce que c&apos;est ?
