@@ -9,16 +9,12 @@ Je pousse la porte et monte l’escalier. Odeur d’essence de térébenthine. P
 **M.A.** : Pourquoi ce choix de la lithographie&#8239;?
 
 **Authouart** : C'est ma rencontre avec l’œuvre de Toulouse-Lautrec en 1957 qui a décidé de ma vocation de peintre.
-J'avais 14 ans. Mais il m'a fallu plus de 20 ans avant que je dessine ma première lithographie (3)... À cette époque je présentais ma première
-exposition personnelle de peintures à Paris dans la Galerie Documenta sur la place Beaubourg. Le directeur de la galerie me demande alors de créer pour cette occasion quelques estampes (gravures et lithographies) et m'indique alors l'adresse de l'atelier Bellini...
 
-Lorsqu'avec Geneviève (4), nous franchissons pour la première fois en 1978, la porte de l'atelier Bellini au 83, Rue du Faubourg Saint Denis,
-nous entrons sans le savoir dans l'ancienne imprimerie Ancourt…
+J'avais 14 ans. Mais il m'a fallu plus de 20 ans avant que je dessine ma première lithographie (3)... À l’occasion de mon exposition personnelle place Beaubourg à Paris, le directeur de la Galerie Documenta me demande de réaliser quelques estampes et il m’indique l’adresse de l’Atelier de lithographies Bellini situé au N°83 rue du Faubourg Saint-Denis.
 
-C'est dans cet atelier que Toulouse-Lautrec, à la fin du XIXème siècle, imprimait ses chefs d'œuvre dont la célèbre affiche d'Aristide Bruant
-aux Ambassadeurs.
+Lorsque Geneviève (4) et moi franchissons la porte de cet atelier, nous entrons sans le savoir dans l’ancienne et historique imprimerie Ancourt. C’est dans cet atelier que Henri de Toulouse-Lautrec, à la fin du XIX<sup>ème</sup> siècle, imprimait ses chefs d’œuvre dont la célèbre affiche d’Aristide Bruant Aux Ambassadeurs.
 
-Nous avons donc imprimé, ta mère et moi nos premières lithographies sur la presse de Toulouse Lautrec&#8239;!
+Nous avons donc imprimé nos premières lithographies sur la presse de Toulouse Lautrec&#8239;!
 
 **M.A.** : C'était en 1978... Pourquoi défends-tu toujours la lithographie aujourd’hui&#8239;?
 
@@ -31,16 +27,25 @@ quand je réalisais des décors de théâtre, de concert, des murs peints (5 et 
 
 Je retrouve ça à l'atelier.
 
-**M.A.** : Est-ce que tu penses maîtriser ce processus de création aujourd'hui&#8239;?
+**M.A.** : Penses-tu aujourd'hui maitriser cette technique&#8239;?
 
 **Authouart** : Cela fait plus de 35 ans que je dessine des lithographies. Que je fréquente ces ateliers parisiens.
 
 J'ai eu plusieurs années une presse venue de l'atelier Mourlot (7) (actuellement au musée Picasso de Munster) sur laquelle Picasso avait sans doute tiré des essais.
 
-J'ai fait voyager ma presse à bras dans plusieurs centres d'Art
-en France, en Allemagne pour imprimer en public. J'aime cette technique. La lithographie fait partie de mon œuvre.
+J'ai fait voyager ma presse à bras dans plusieurs centres d'Art en France, en Allemagne pour imprimer en public. J'aime cette technique. La lithographie fait partie de mon œuvre.
 
-L'utilisation des matériaux intermédiaires que sont la pierre, le cuivre, le bois. J'aime la prise de risque dûe au simple fait de devoir redessiner l'original à l'envers. L'emploi de la craie, de l'encre... de l'acide. Le travail de forme, de recouvrement des couleurs. Le but à atteindre étant celui de retrouver la force de l'œuvre originale dans la reproduction. C'est un véritable combat.
-Et quand je termine d'imprimer celle qui est en cours, je sens dans ma tête s'organiser la prochaine.
+L'utilisation des matériaux intermédiaires que sont la pierre, le cuivre, le bois. J'aime la prise de risque dûe au simple fait de devoir redessiner l'original à l'envers. L'emploi de la craie, de l'encre... de l'acide. Le travail de forme, de recouvrement des couleurs. Le but à atteindre étant celui de retrouver la force de l'œuvre originale. C'est un véritable combat.
 
 **Extrait de discussion entre Daniel et Marie Authouart**
+
+<div style="font-size: 8px; color: black">
+  Toute reproduction ou représentation, en tout ou partie, à d&apos;autres
+  fins sur un quelconque support est interdite. Le non-respect de cette
+  interdiction constitue une contrefaçon pouvant engager la responsabilité
+  civile et pénale du contrefacteur. Les photographies et oeuvres de ce
+  site appartiennent à son auteur et sont protégées par des droits
+  d&apos;auteur. La défense du droit d&apos;auteur et de reproduction de
+  Daniel Authouart est gérée par l&apos;ADAGP 11 rue Duguay Trouin 75006
+  Paris.
+</div>

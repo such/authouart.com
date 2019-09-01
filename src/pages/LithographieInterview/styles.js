@@ -13,6 +13,9 @@ export default () => ({
     position: 'relative',
     overflow: 'hidden'
   },
+  inner: {
+    display: 'flex'
+  },
   interview: {
     columnCount: 3,
     ...americanTypewriter,

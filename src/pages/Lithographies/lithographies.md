@@ -276,15 +276,17 @@ Coffee Shop
 
 #### 2018
 
-ART NEWS
+Art News
 
-GHOSTS
+Ghosts
 
 SAMO
 
-MISS YOU
+Miss You
 
-## Gravures
+<hr />
+
+### Gravures
 
 #### 1977
 
@@ -320,7 +322,9 @@ Piano
 
 Quelques notes
 
-## Sérigraphies
+<hr />
+
+### Sérigraphies
 
 #### 1987
 

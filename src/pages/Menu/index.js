@@ -48,7 +48,7 @@ const Menu = ({ classes, scrollToLitho, scrollToArtiste }) => (
         classes={{ root: classnames(classes.socialButton, classes.photos) }}
       >
         <img src={pictoInsta} alt="instagram" className={classes.socialPicto} />
-        <ArrowRightIcon /> Photos
+        <ArrowRightIcon /> Publications
       </Button>
       <Button
         href="https://www.linkedin.com/in/daniel-authouart-1a8513b0"

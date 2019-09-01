@@ -45,13 +45,13 @@ const Layout = React.forwardRef(
                 classes={{ root: classnames(classes.button, classes.bio) }}
                 onClick={() => setBioOpen(true)}
               >
-                <span className={classes.buttonLabel}>Bio</span>
+                <span className={classes.buttonLabel}>Biographie</span>
               </Button>
               <Button
                 classes={{ root: classnames(classes.button, classes.lieux) }}
                 onClick={() => setLieuxOpen(true)}
               >
-                <span className={classes.buttonLabel}>Lieux d&apos;expo</span>
+                <span className={classes.buttonLabel}>Galeries</span>
               </Button>
             </>
           )}

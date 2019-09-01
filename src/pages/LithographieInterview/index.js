@@ -30,7 +30,7 @@ const LithographieInterview = React.forwardRef(({ classes }, ref) => {
       .then(text => setContent(text));
   }, []);
   return (
-    <Layout classes={{ root: classes.root }} ref={ref}>
+    <Layout classes={{ root: classes.root, inner: classes.inner }} ref={ref}>
       <Lithographies
         onClose={() => setLithographiesOpen(false)}
         open={lithographiesOpen}
@@ -47,7 +47,7 @@ const LithographieInterview = React.forwardRef(({ classes }, ref) => {
       />
       <LithoPicture
         src={litho3}
-        title="3. Authouart, Atelier Arts Lithos, 1978<br />
+        title="3. Authouart, Atelier Arts Litho, 1978<br />
         1ère lithographie Le manège de l’Avenir (en arrière-plan)"
         width={344}
       />
