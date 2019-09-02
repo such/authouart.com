@@ -1,8 +1,11 @@
 import siteIntro from './assets/site-intro.gif';
+import siteIntroWebp from './assets/site-intro.webp';
+import { webpBackgroundImage } from './lib/webp';
 
 export default () => ({
   loading: {
-    background: `center / contain no-repeat url(${siteIntro}), #FFFFFF`,
+    background: `center / contain no-repeat #FFFFFF`,
+    ...webpBackgroundImage(siteIntro, siteIntroWebp),
     width: '100%',
     height: '100%',
     zIndex: 40,
