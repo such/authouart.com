@@ -20,6 +20,7 @@ const Menu = ({ classes, scrollToLitho, scrollToArtiste }) => (
       onClick={scrollToLitho}
       onKeyDown={scrollToLitho}
       role="button"
+      aria-label="lithographies"
       tabIndex="-1"
     />
     <div
@@ -27,12 +28,14 @@ const Menu = ({ classes, scrollToLitho, scrollToArtiste }) => (
       onClick={scrollToArtiste}
       onKeyDown={scrollToArtiste}
       role="button"
+      aria-label="artiste"
       tabIndex="-1"
     />
     <div className={classes.social}>
       <Button
         href="https://www.facebook.com/DanielAuthouart/"
         target="_blank"
+        rel="noopener"
         classes={{ root: classnames(classes.socialButton, classes.actu) }}
       >
         <img
@@ -45,6 +48,7 @@ const Menu = ({ classes, scrollToLitho, scrollToArtiste }) => (
       <Button
         href="https://www.instagram.com/danielauthouart/"
         target="_blank"
+        rel="noopener"
         classes={{ root: classnames(classes.socialButton, classes.photos) }}
       >
         <img src={pictoInsta} alt="instagram" className={classes.socialPicto} />
@@ -53,6 +57,7 @@ const Menu = ({ classes, scrollToLitho, scrollToArtiste }) => (
       <Button
         href="https://www.linkedin.com/in/daniel-authouart-1a8513b0"
         target="_blank"
+        rel="noopener"
         classes={{ root: classnames(classes.socialButton, classes.photos) }}
       >
         <img
