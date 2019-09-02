@@ -32,6 +32,10 @@ export default () => ({
     KhtmlUserDrag: 'none',
     MozUserDrag: 'none',
     OUserDrag: 'none',
-    userDrag: 'none'
+    userDrag: 'none',
+    userSelect: 'none',
+    MozUserSelect: 'none',
+    WebkitUserSelect: 'none',
+    MsUserSelect: 'none'
   }
 });

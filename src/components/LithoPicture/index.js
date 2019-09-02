@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -16,15 +16,26 @@ const LithoPicture = ({ classes, src, title, width }) => {
   let shiftY = 0;
   let offsetX = 0;
   let offsetY = 0;
+  let mouseX = 0;
+  let mouseY = 0;
+
+  useEffect(() => {
+    const el = document.addEventListener('dragover', event => {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+    });
+
+    return document.removeEventListener('dragover', el);
+  });
 
   const moveAt = (clientX, clientY) => {
     element.current.style.left = `${clientX - shiftX - offsetX}px`;
     element.current.style.top = `${clientY - shiftY - offsetY}px`;
   };
 
-  const onDrag = ({ clientX, clientY }) => {
-    if (clientX && clientY) {
-      moveAt(clientX, clientY);
+  const onDrag = () => {
+    if (mouseX > 0 && mouseY > 0 && shiftX > 0 && shiftY > 0) {
+      moveAt(mouseX, mouseY);
     }
   };
 
@@ -37,8 +48,8 @@ const LithoPicture = ({ classes, src, title, width }) => {
     const img = new Image();
     event.dataTransfer.setDragImage(img, 0, 0);
 
-    offsetX = event.target.parentNode.getBoundingClientRect().left;
-    offsetY = event.target.parentNode.getBoundingClientRect().top;
+    offsetX = element.current.parentNode.getBoundingClientRect().left;
+    offsetY = element.current.parentNode.getBoundingClientRect().top;
 
     shiftX = event.clientX - element.current.getBoundingClientRect().left;
     shiftY = event.clientY - element.current.getBoundingClientRect().top;
