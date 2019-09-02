@@ -22,11 +22,13 @@ const App = ({ classes }) => {
     setTimeout(() => setLoading(false), 3000);
   }, []);
 
+  const webp = canUseWebp();
+
   return (
     <StripeContext.Provider
       value={Stripe('pk_test_w3Pvq7zERnQmPvqvbMKiEXuD00GthY2MHl')}
     >
-      <div className={classnames({ webp: canUseWebp() })}>
+      <div className={classnames({ webp, nowebp: !webp })}>
         <Router>
           {loading && <div className={classes.loading} />}
           <div className={classnames(classes.content, { loading })}>

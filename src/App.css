@@ -5,7 +5,9 @@ body {
   padding: 0px;
 }
 
-#root {
+#root,
+.webp,
+.nowebp {
   height: 100%;
 }
 
