@@ -1,4 +1,6 @@
 import cinema from '../../assets/cinema.png';
+import cinemaWebp from '../../assets/cinema.webp';
+import { webpBackgroundImage } from '../../lib/webp';
 
 export default {
   root: {
@@ -9,7 +11,7 @@ export default {
     position: 'relative'
   },
   main: {
-    backgroundImage: `url(${cinema})`,
+    ...webpBackgroundImage(cinema, cinemaWebp),
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: 'contain',
