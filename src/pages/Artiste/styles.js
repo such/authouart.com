@@ -10,6 +10,9 @@ export default {
     display: 'flex',
     position: 'relative'
   },
+  inner: {
+    display: 'flex'
+  },
   main: {
     ...webpBackgroundImage(cinema, cinemaWebp),
     backgroundRepeat: 'no-repeat',
@@ -26,7 +29,7 @@ export default {
   playlist: {
     display: 'flex',
     flexDirection: 'column',
-    maxHeight: 700,
+    maxHeight: '80%',
     overflowY: 'scroll',
     pointerEvents: 'all'
   },
@@ -38,7 +41,9 @@ export default {
   },
   iframe: {
     left: '13%',
-    bottom: 225,
+    top: '13%',
+    width: '75%',
+    height: '70%',
     position: 'absolute'
   }
 };

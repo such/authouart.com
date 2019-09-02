@@ -22,7 +22,7 @@ const Artiste = React.forwardRef(({ classes }, ref) => {
   }
 
   return (
-    <Layout classes={{ content: classes.root }} ref={ref}>
+    <Layout classes={{ content: classes.root, inner: classes.inner }} ref={ref}>
       <div className={classes.main}>
         <div className={classes.playlist}>
           {playlistItems.map(item => (
@@ -40,8 +40,6 @@ const Artiste = React.forwardRef(({ classes }, ref) => {
         </div>
       </div>
       <iframe
-        width="76%"
-        height="52%"
         title="main"
         src={`https://www.youtube.com/embed/${mainVideo.snippet.resourceId.videoId}`}
         frameBorder="0"
