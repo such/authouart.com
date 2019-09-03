@@ -1,9 +1,9 @@
 export default () => ({
   paper: {
-    color: '#acecd2'
+    color: '#81d5ad'
   },
   button: {
-    backgroundColor: '#acecd2'
+    backgroundColor: '#81d5ad'
   },
   content: {
     fontSize: 36,

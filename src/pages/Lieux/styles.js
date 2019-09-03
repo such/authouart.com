@@ -1,8 +1,8 @@
 export default () => ({
   paper: {
-    color: '#edacfa'
+    color: '#db5ed7'
   },
   button: {
-    backgroundColor: '#edacfa'
+    backgroundColor: '#db5ed7'
   }
 });
