@@ -42,13 +42,13 @@ const LithographieInterview = React.forwardRef(({ classes }, ref) => {
       />
       <LithoPicture
         src={litho2}
-        title="2. Coffee shop, Aquarelle"
+        title="2. The Last Call – Aquarelle, 2016 "
         width={368}
       />
       <LithoPicture
         src={litho3}
         title="3. Authouart, Atelier Arts Litho, 1978<br />
-        1ère lithographie Le manège de l’Avenir (en arrière-plan)"
+        1<sup>ère</sup> lithographie Le manège de l’Avenir (en arrière-plan)"
         width={344}
       />
       <LithoPicture
