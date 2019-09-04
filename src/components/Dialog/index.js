@@ -9,13 +9,17 @@ import {
   IconButton,
   DialogTitle,
   DialogContent,
-  Button
+  Button,
+  useMediaQuery,
+  useTheme
 } from '@material-ui/core';
 import styles from './styles';
 
 const Dialog = ({ classes, title, source, open, onClose }) => {
   const [full, setFull] = useState(false);
   const [content, setContent] = useState(null);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   useEffect(() => {
     fetch(source)
@@ -25,6 +29,7 @@ const Dialog = ({ classes, title, source, open, onClose }) => {
 
   return (
     <MuiDialog
+      fullScreen={fullScreen}
       open={open}
       onClose={onClose}
       classes={{ root: classes.root, paper: classes.paper }}

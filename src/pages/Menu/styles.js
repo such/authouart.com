@@ -7,7 +7,7 @@ import bgArtisteWebp from '../../assets/home-background-artiste-big.webp';
 import { avantGardeBold } from '../../fonts';
 import { webpBackgroundImage } from '../../lib/webp';
 
-export default () => ({
+export default theme => ({
   inner: {
     ...webpBackgroundImage(bg, bgWebp),
     backgroundSize: 'contain',
@@ -15,7 +15,11 @@ export default () => ({
     backgroundPosition: 'top left',
     paddingTop: '77.7%',
     marginTop: -172,
-    zIndex: 0
+    zIndex: 0,
+    [theme.breakpoints.down('md')]: {
+      marginTop: -80,
+      backgroundImage: 'none'
+    }
   },
   innerButton: {
     cursor: 'pointer',
@@ -32,6 +36,9 @@ export default () => ({
     bottom: 0,
     right: 0,
     '&:hover': {
+      opacity: 1
+    },
+    [theme.breakpoints.down('md')]: {
       opacity: 1
     }
   },
@@ -53,16 +60,29 @@ export default () => ({
   },
   social: {
     display: 'flex',
+    flexWrap: 'wrap',
     position: 'absolute',
-    transform: 'rotate(-90deg)',
-    marginLeft: -240,
-    top: '50%'
+    justifyContent: 'center',
+    [theme.breakpoints.up('md')]: {
+      transform: 'rotate(-90deg)',
+      marginLeft: -240,
+      top: '50%'
+    },
+    [theme.breakpoints.down('md')]: {
+      width: '100%'
+    }
   },
   socialButton: {
     ...avantGardeBold,
-    marginRight: 20
+    marginRight: 20,
+    [theme.breakpoints.down('md')]: {
+      fontSize: 13
+    }
   },
   socialPicto: {
-    width: 20
+    width: 20,
+    [theme.breakpoints.down('md')]: {
+      width: 16
+    }
   }
 });

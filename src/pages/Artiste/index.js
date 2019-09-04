@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
@@ -11,6 +11,18 @@ import styles from './styles';
 const Artiste = React.forwardRef(({ classes }, ref) => {
   const [playlistItems] = useFetchLambda('list-videos');
   const [mainVideo, setMainVideo] = useState(null);
+  const iframe = useRef(null);
+
+  useEffect(() => {
+    if (iframe.current) {
+      const { width } = iframe.current.getBoundingClientRect();
+      const height = (width * 10) / 16;
+      iframe.current.setAttribute(
+        'style',
+        `height:${height}px;top:calc(50% - ${height / 2}px)`
+      );
+    }
+  });
 
   if (!playlistItems) {
     return null;
@@ -40,6 +52,7 @@ const Artiste = React.forwardRef(({ classes }, ref) => {
         </div>
       </div>
       <iframe
+        ref={iframe}
         title="main"
         src={`https://www.youtube.com/embed/${mainVideo.snippet.resourceId.videoId}`}
         frameBorder="0"

@@ -1,14 +1,17 @@
 import { blue } from '../../colors';
 import { avantGardeBold } from '../../fonts';
 
-export default () => ({
+export default theme => ({
   root: {
     marginLeft: '-7%',
     zIndex: 20,
     position: 'relative',
     marginBottom: 12,
     textDecoration: 'none',
-    display: 'block'
+    display: 'block',
+    [theme.breakpoints.down('md')]: {
+      marginLeft: '-2%'
+    }
   },
   title: {
     ...avantGardeBold,
@@ -19,7 +22,11 @@ export default () => ({
     color: '#9CF8D0',
     fontSize: 100,
     textTransform: 'uppercase',
-    lineHeight: 1.1
+    lineHeight: 1.1,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 42,
+      textShadow: '3px 3px 0 #3E4C94'
+    }
   },
   titleA: {
     MozFontFeatureSettings: '"salt"',
@@ -35,6 +42,11 @@ export default () => ({
     WebkitTextStrokeColor: blue,
     textShadow: `2px 2px 0 ${blue}`,
     zIndex: 10,
-    left: 60
+    left: 60,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 22,
+      left: 40,
+      width: 'calc(100% - 40px)'
+    }
   }
 });

@@ -2,7 +2,7 @@ import cinema from '../../assets/cinema.png';
 import cinemaWebp from '../../assets/cinema.webp';
 import { webpBackgroundImage } from '../../lib/webp';
 
-export default {
+export default theme => ({
   root: {
     height: '100vh',
     width: '100%',
@@ -31,19 +31,28 @@ export default {
     flexDirection: 'column',
     maxHeight: '80%',
     overflowY: 'scroll',
-    pointerEvents: 'all'
+    pointerEvents: 'all',
+    [theme.breakpoints.down('md')]: {
+      flexDirection: 'row',
+      position: 'absolute',
+      bottom: '15%',
+      width: '100%',
+      overflowX: 'scroll',
+      flexShrink: 0
+    }
   },
   preview: {
     boxShadow: '9px 1px 27px rgba(0, 0, 0, 0.7)',
     border: '2px solid #FFFFFF',
     padding: 0,
-    marginBottom: 10
+    marginBottom: 10,
+    [theme.breakpoints.down('md')]: {
+      marginRight: 10
+    }
   },
   iframe: {
     left: '13%',
-    top: '13%',
     width: '75%',
-    height: '70%',
     position: 'absolute'
   }
-};
+});

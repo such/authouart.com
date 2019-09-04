@@ -1,11 +1,16 @@
 import { blue } from '../../colors';
 import { avantGardeBold } from '../../fonts';
 
-export default () => ({
+export default theme => ({
   root: {
-    padding: '0 20%',
     width: '100%',
-    height: '100vh'
+    [theme.breakpoints.up('md')]: {
+      padding: '0 20%',
+      height: '100vh'
+    },
+    [theme.breakpoints.down('md')]: {
+      padding: '0 20px'
+    }
   },
   inner: {
     minHeight: 'calc(100vh - 40px)',
@@ -32,6 +37,9 @@ export default () => ({
     },
     '&:hover $buttonLabel': {
       color: '#9CF8D0'
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize: 20
     }
   },
   oeuvres: {

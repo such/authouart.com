@@ -2,7 +2,7 @@ import { avantGarde } from '../../fonts';
 
 const randomPercentage = () => `${Math.random() * 80}%`;
 
-export default () => ({
+export default theme => ({
   root: {
     border: 'solid 1px #FFFFFF',
     position: 'absolute',
@@ -11,7 +11,10 @@ export default () => ({
     cursor: 'move',
     top: randomPercentage,
     left: randomPercentage,
-    zIndex: 2
+    zIndex: 2,
+    [theme.breakpoints.down('md')]: {
+      display: 'none'
+    }
   },
   cursor: {
     position: 'absolute',
