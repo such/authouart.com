@@ -9,6 +9,7 @@ import StripeContext from './contexts/stripe';
 import Home from './pages/Home';
 import Oeuvres from './pages/Oeuvres';
 import Litho from './pages/Litho';
+import FlipBookLitho from './pages/FlipBookLitho';
 import { canUseWebp } from './lib/webp';
 
 import styles from './App.styles';
@@ -35,6 +36,7 @@ const App = ({ classes }) => {
             <Route path="/" exact component={Home} />
             <Route exact path="/oeuvres" component={Oeuvres} />
             <Route exact path="/oeuvres/:name" component={Litho} />
+            <Route exact path="/lalithographie" component={FlipBookLitho} />
           </div>
         </Router>
       </div>

@@ -4,6 +4,7 @@ import ReactMD from 'react-markdown';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 import ArrowRightIcon from '@material-ui/icons/ArrowRightAlt';
+import { Link } from 'react-router-dom';
 
 import LithoPicture from '../../components/LithoPicture';
 import Lithographies from '../Lithographies';
@@ -79,7 +80,11 @@ const LithographieInterview = React.forwardRef(({ classes }, ref) => {
           <ArrowRightIcon />
           <span className={classes.buttonLabel}>Les lithographies</span>
         </Button>
-        <Button classes={{ root: classes.button }} style={{ display: 'none' }}>
+        <Button
+          classes={{ root: classes.button }}
+          component={Link}
+          to="/lalithographie"
+        >
           <ArrowRightIcon />
           <span className={classes.buttonLabel}>
             Qu&apos;est-ce que c&apos;est ?
