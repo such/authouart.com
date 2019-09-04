@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
+import Title from '../../components/Title';
+
 import styles from './styles';
 
 const FlipBookLitho = ({ classes }) => (
   <div className={classes.root}>
+    <Title classes={{ root: classes.title }} />
     <iframe
       title="Authouart et l'art de la lithographie"
       src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=fvp5wmjt4"
