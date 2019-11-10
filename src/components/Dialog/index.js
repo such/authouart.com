@@ -15,16 +15,18 @@ import {
 } from '@material-ui/core';
 import styles from './styles';
 
-const Dialog = ({ classes, title, source, open, onClose }) => {
+const Dialog = ({ classes, title, source, open, onClose, children }) => {
   const [full, setFull] = useState(false);
   const [content, setContent] = useState(null);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   useEffect(() => {
-    fetch(source)
-      .then(response => response.text())
-      .then(text => setContent(text));
+    if (source) {
+      fetch(source)
+        .then(response => response.text())
+        .then(text => setContent(text));
+    }
   }, [source]);
 
   return (
@@ -49,11 +51,9 @@ const Dialog = ({ classes, title, source, open, onClose }) => {
         onWheel={() => setFull(true)}
         classes={{ root: classes.content }}
       >
-        <ReactMD
-          source={content}
-          escapeHtml={false}
-          className={classnames(classes.md, { full })}
-        />
+        <div className={classnames(classes.md, { full })}>
+          {content ? <ReactMD source={content} escapeHtml={false} /> : children}
+        </div>
         <Button
           onClick={() => setFull(true)}
           classes={{
@@ -71,9 +71,15 @@ const Dialog = ({ classes, title, source, open, onClose }) => {
 Dialog.propTypes = {
   classes: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
-  source: PropTypes.string.isRequired,
+  source: PropTypes.string,
+  children: PropTypes.any,
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired
+};
+
+Dialog.defaultProps = {
+  source: null,
+  children: null
 };
 
 export default withStyles(styles)(Dialog);

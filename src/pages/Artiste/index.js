@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
@@ -8,7 +8,7 @@ import Layout from '../Layout';
 
 import styles from './styles';
 
-const Artiste = React.forwardRef(({ classes }, ref) => {
+const Artiste = forwardRef(({ classes }, ref) => {
   const [playlistItems] = useFetchLambda('list-videos');
   const [mainVideo, setMainVideo] = useState(null);
   const iframe = useRef(null);
