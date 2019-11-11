@@ -25,7 +25,7 @@ const Lithographies = ({ classes, open, onClose }) => (
     onClose={onClose}
   >
     {lithographies.map(l => (
-      <div className={classes.litho}>
+      <div className={classes.litho} key={l.title}>
         <div className={classes.pictureContainer}>
           <img
             src={titleToPictureName(l.title)}

@@ -13,7 +13,7 @@ import Title from '../../components/Title';
 import styles from './styles';
 
 const Layout = React.forwardRef(
-  ({ classes, children, withTitle, withNav }, ref) => {
+  ({ classes, children, withTitle, withNav, contentRef }, ref) => {
     const [bioOpen, setBioOpen] = useState(false);
     const [lieuxOpen, setLieuxOpen] = useState(false);
     return (
@@ -55,7 +55,9 @@ const Layout = React.forwardRef(
               </Button>
             </>
           )}
-          <div className={classes.content}>{children}</div>
+          <div className={classes.content} ref={contentRef}>
+            {children}
+          </div>
         </div>
       </div>
     );
@@ -66,12 +68,14 @@ Layout.propTypes = {
   classes: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
   withNav: PropTypes.bool,
-  withTitle: PropTypes.bool
+  withTitle: PropTypes.bool,
+  contentRef: PropTypes.ref
 };
 
 Layout.defaultProps = {
   withNav: false,
-  withTitle: false
+  withTitle: false,
+  contentRef: null
 };
 
 export default withStyles(styles)(Layout);

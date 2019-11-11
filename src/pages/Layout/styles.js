@@ -9,6 +9,9 @@ export default theme => ({
       height: '100vh'
     },
     [theme.breakpoints.down('md')]: {
+      padding: '0 10%'
+    },
+    [theme.breakpoints.down('sm')]: {
       padding: '0 20px'
     }
   },

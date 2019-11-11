@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, forwardRef } from 'react';
+import React, { useState, useRef, forwardRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
@@ -7,13 +7,15 @@ import useFetchLambda from '../../hooks/useFetchLambda';
 import Layout from '../Layout';
 
 import styles from './styles';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const Artiste = forwardRef(({ classes }, ref) => {
   const [playlistItems] = useFetchLambda('list-videos');
   const [mainVideo, setMainVideo] = useState(null);
   const iframe = useRef(null);
+  useWindowSize();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (iframe.current) {
       const { width } = iframe.current.getBoundingClientRect();
       const height = (width * 10) / 16;

@@ -10,7 +10,7 @@ export default theme => ({
     textDecoration: 'none',
     display: 'block',
     [theme.breakpoints.down('md')]: {
-      marginLeft: '-2%'
+      marginLeft: 0
     }
   },
   title: {

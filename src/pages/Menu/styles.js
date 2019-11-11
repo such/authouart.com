@@ -8,18 +8,28 @@ import { avantGardeBold } from '../../fonts';
 import { webpBackgroundImage } from '../../lib/webp';
 
 export default theme => ({
-  inner: {
+  root: {
+    margin: 'auto',
+    height: '100vh'
+  },
+  layoutContent: {
     ...webpBackgroundImage(bg, bgWebp),
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'top left',
-    paddingTop: '77.7%',
+    backgroundPosition: 'top center',
     marginTop: -172,
     zIndex: 0,
+    height: '100%',
+    width: '100%',
     [theme.breakpoints.down('md')]: {
-      marginTop: -80,
       backgroundImage: 'none'
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: -100
     }
+  },
+  layoutInner: {
+    height: '100%'
   },
   innerButton: {
     cursor: 'pointer',
@@ -29,7 +39,7 @@ export default theme => ({
     backgroundRepeat: 'no-repeat',
     position: 'absolute',
     opacity: 0,
-    backgroundPosition: 'top left',
+    backgroundPosition: 'top center',
     boxSizing: 'content-box',
     top: 0,
     left: 0,
@@ -68,8 +78,9 @@ export default theme => ({
       marginLeft: -240,
       top: '50%'
     },
-    [theme.breakpoints.down('md')]: {
-      width: '100%'
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      top: '100%'
     }
   },
   socialButton: {
