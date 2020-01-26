@@ -43,17 +43,13 @@ const Litho = ({ classes, match }) => {
       <>
         <Breadcrumbs separator=">" aria-label="breadcrumb">
           <Link to="/">AUTHOUART</Link>
-          <Link to="/lithographies">Œuvres</Link>
+          <Link to="/oeuvres">Œuvres</Link>
           <span className={classes.litho}>
             {year} - {name}
           </span>
         </Breadcrumbs>
         <div className={classes.root}>
-          <div
-            style={{ backgroundImage: `url(${image})` }}
-            className={classes.picture}
-            alt={name}
-          />
+          <img src={image} className={classes.picture} alt={name} />
           <div className={classes.content}>
             {error && <span>{error}</span>}
             <LithoDescription

@@ -10,7 +10,8 @@ export default () => ({
     width: 250,
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    marginBottom: 10
   },
   img: {
     boxShadow: '1px 2px 4px rgba(0, 0, 0, 0.25)',

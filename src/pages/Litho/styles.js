@@ -7,17 +7,17 @@ export default theme => ({
     margin: 'auto',
     height: '55vh',
     maxWidth: 900,
+    justifyContent: 'center',
     [theme.breakpoints.up('md')]: {
       maxWidth: 1200
     }
   },
   picture: {
-    width: '50%',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'right'
+    height: '100%',
+    boxShadow: '1px 2px 4px rgba(0, 0, 0, 0.25)'
   },
   content: {
+    ...avantGarde,
     width: 360,
     marginLeft: 80,
     display: 'flex',
@@ -60,12 +60,12 @@ export default theme => ({
       ...avantGardeBold,
       textTransform: 'uppercase',
       fontSize: 16,
-      marginBottom: 2
+      marginBottom: 2,
+      color: 'rgba(0, 0, 0, 0.6)'
     },
     '& p': {
-      ...avantGarde,
       color: '#818181',
-      fontSize: 14,
+      fontSize: 12,
       marginTop: 0
     }
   }

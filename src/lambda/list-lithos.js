@@ -17,14 +17,16 @@ export async function handler() {
     }
 
     const [skus, products] = await Promise.all([
-      stripe.skus.list({ limit: 100 }),
-      stripe.products.list({ limit: 100 })
+      stripe.skus.list({ limit: 100, active: true }),
+      stripe.products.list({ limit: 100, active: true })
     ]);
 
-    const data = skus.data.map(sku => {
-      sku.product = products.data.find(p => p.id === sku.product);
-      return sku;
-    });
+    const data = skus.data
+      .map(sku => {
+        const product = products.data.find(p => p.id === sku.product);
+        return product ? { ...sku, product } : null;
+      })
+      .filter(Boolean);
 
     return {
       statusCode: 200,

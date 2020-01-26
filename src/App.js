@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { withStyles } from '@material-ui/core';
 
 import StripeContext from './contexts/stripe';
@@ -27,16 +27,18 @@ const App = ({ classes }) => {
 
   return (
     <StripeContext.Provider
-      value={Stripe('pk_test_w3Pvq7zERnQmPvqvbMKiEXuD00GthY2MHl')}
+      value={Stripe('pk_live_BoFD8FywbH0GGuNabdjXfI2i00AQPNIYJu')}
     >
       <div className={classnames({ webp, nowebp: !webp })}>
         <Router>
           {loading && <div className={classes.loading} />}
           <div className={classnames(classes.content, { loading })}>
-            <Route path="/" exact component={Home} />
-            <Route exact path="/oeuvres" component={Oeuvres} />
-            <Route exact path="/oeuvres/:name" component={Litho} />
-            <Route exact path="/lalithographie" component={FlipBookLitho} />
+            <Switch>
+              <Route exact path="/oeuvres" component={Oeuvres} />
+              <Route exact path="/oeuvres/:name" component={Litho} />
+              <Route exact path="/lalithographie" component={FlipBookLitho} />
+              <Route path="/" component={Home} />
+            </Switch>
           </div>
         </Router>
       </div>

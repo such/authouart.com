@@ -32,7 +32,7 @@ const Layout = React.forwardRef(
                 classes={{ root: classnames(classes.button, classes.oeuvres) }}
                 disableRipple
                 component={Link}
-                to="/lithographies"
+                to="/oeuvres"
               >
                 <span className={classes.buttonLabel}>Œuvres</span>
                 <img

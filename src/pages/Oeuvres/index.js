@@ -22,7 +22,7 @@ const Oeuvres = ({ classes }) => {
       {lithos && (
         <div className={classes.list}>
           {lithos
-            .sort((l, m) => l.product.metadata.year - m.product.metadata.year)
+            .sort((l, m) => m.product.metadata.year - l.product.metadata.year)
             .map(l => (
               <LithoItem key={l.id} litho={l} />
             ))}

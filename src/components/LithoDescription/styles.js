@@ -1,4 +1,4 @@
-import { avantGardeBold } from '../../fonts';
+import { avantGarde, avantGardeBold } from '../../fonts';
 
 export default () => ({
   root: {
@@ -15,13 +15,15 @@ export default () => ({
     color: '#0f1756'
   },
   caption: {
+    ...avantGarde,
     color: '#818181',
     fontSize: 13,
-    marginBottom: 8
+    marginBottom: 8,
+    lineHeight: '16px'
   },
   description: {
     color: '#969696',
     fontSize: 14,
-    lineHeight: '16px'
+    lineHeight: '18px'
   }
 });

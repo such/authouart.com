@@ -46,7 +46,6 @@ export default theme => ({
     }
   },
   oeuvres: {
-    display: 'none',
     top: '4%',
     right: 'calc(4% - 40px)',
     '&:hover $buttonLabel': {

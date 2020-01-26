@@ -14,7 +14,7 @@ const LithoItem = ({ classes, litho }) => {
   const { product, price, image } = litho;
   const { name } = product;
 
-  const link = `/lithographies/${name}`;
+  const link = `/oeuvres/${name}`;
 
   return (
     <div className={classes.root}>

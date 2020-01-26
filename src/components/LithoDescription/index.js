@@ -12,7 +12,7 @@ const LithoDescription = ({ classes, product }) => {
     <div className={classes.root}>
       <div className={classes.year}>{year}</div>
       <div className={classes.name}>{name}</div>
-      <div className={classes.caption}>{caption}</div>
+      <pre className={classes.caption}>{caption}</pre>
       <div className={classes.description}>{description}</div>
     </div>
   );
