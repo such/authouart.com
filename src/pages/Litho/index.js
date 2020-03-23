@@ -39,7 +39,6 @@ const Litho = ({ classes, match }) => {
           'US',
           'CA',
           'NO',
-          'SU',
           'IE'
         ]
       }
