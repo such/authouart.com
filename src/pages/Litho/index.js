@@ -27,7 +27,22 @@ const Litho = ({ classes, match }) => {
       items: [{ sku: id, quantity: 1 }],
       successUrl: 'https://authouart.fr/success',
       cancelUrl: 'https://authouart.fr/cancel',
-      billingAddressCollection: 'required'
+      billingAddressCollection: 'required',
+      shippingAddressCollection: {
+        allowedCountries: [
+          'FR',
+          'DE',
+          'GB',
+          'IT',
+          'ES',
+          'PT',
+          'US',
+          'CA',
+          'NO',
+          'SU',
+          'IE'
+        ]
+      }
     }).then(result => {
       setError(result.error.message);
     });
