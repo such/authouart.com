@@ -21,8 +21,8 @@ Galerie Rollin<br />
 31 rue Ecuyère<br />
 76000 Rouen<br />
 Tel : +33 (0)2 35 70 10 72<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+33 (0)6 80 85 11 85<br />
-Email : <a href="mailto:rollincontact@gmail.com">rollincontact@gmail.com</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+33 (0)6 95 86 35 41<br />
+Email : <a href="mailto:contact@galerie-rollin.com">contact@galerie-rollin.com</a><br />
 
 ## LE HAVRE
 
