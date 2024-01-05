@@ -16,15 +16,15 @@ export async function handler() {
       };
     }
 
-    const [skus, products] = await Promise.all([
-      stripe.skus.list({ limit: 100, active: true }),
+    const [prices, products] = await Promise.all([
+      stripe.prices.list({ limit: 100, active: true }),
       stripe.products.list({ limit: 100, active: true })
     ]);
 
-    const data = skus.data
-      .map(sku => {
-        const product = products.data.find(p => p.id === sku.product);
-        return product ? { ...sku, product } : null;
+    const data = prices.data
+      .map(price => {
+        const product = products.data.find(p => p.id === price.product);
+        return product ? { ...price, product } : null;
       })
       .filter(Boolean);
 

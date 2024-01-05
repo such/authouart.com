@@ -24,7 +24,8 @@ const Litho = ({ classes, match }) => {
   const buy = () => {
     const { id } = litho;
     redirectToCheckout({
-      items: [{ sku: id, quantity: 1 }],
+      lineItems: [{ price: id, quantity: 1 }],
+      mode: 'payment',
       successUrl: 'https://authouart.fr/success',
       cancelUrl: 'https://authouart.fr/cancel',
       billingAddressCollection: 'required',
@@ -48,9 +49,10 @@ const Litho = ({ classes, match }) => {
   };
 
   const renderLitho = () => {
-    const { product, price, image } = litho;
+    const { product, unit_amount } = litho;
     const {
-      metadata: { year }
+      metadata: { year },
+      images
     } = product;
 
     return (
@@ -63,7 +65,7 @@ const Litho = ({ classes, match }) => {
           </span>
         </Breadcrumbs>
         <div className={classes.root}>
-          <img src={image} className={classes.picture} alt={name} />
+          <img src={images[0]} className={classes.picture} alt={name} />
           <div className={classes.content}>
             {error && <span>{error}</span>}
             <LithoDescription
@@ -71,7 +73,7 @@ const Litho = ({ classes, match }) => {
               classes={{ root: classes.description }}
             />
             <div className={classes.buy}>
-              <span className={classes.price}>{formatPrice(price)}</span>
+              <span className={classes.price}>{formatPrice(unit_amount)}</span>
               <Button
                 onClick={buy}
                 classes={{
