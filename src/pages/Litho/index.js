@@ -1,49 +1,49 @@
-import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import { Button, Breadcrumbs } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import { Button, Breadcrumbs } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
-import useFetchLambda from '../../hooks/useFetchLambda';
-import LithoDescription from '../../components/LithoDescription';
-import whiteCaddie from '../../assets/white-caddie.png';
-import formatPrice from '../../lib/formatPrice';
-import StripeContext from '../../contexts/stripe';
+import useFetchLambda from "../../hooks/useFetchLambda";
+import LithoDescription from "../../components/LithoDescription";
+import whiteCaddie from "../../assets/white-caddie.png";
+import formatPrice from "../../lib/formatPrice";
+import StripeContext from "../../contexts/stripe";
 
-import styles from './styles';
-import Layout from '../Layout';
+import styles from "./styles";
+import Layout from "../Layout";
 
 const Litho = ({ classes, match }) => {
-  const [data] = useFetchLambda('list-lithos');
+  const [data] = useFetchLambda("list-lithos");
   const { name } = match.params;
   const { redirectToCheckout } = useContext(StripeContext);
   const [error, setError] = useState(null);
 
-  const litho = data && data.find(l => l.product.name === name);
+  const litho = data && data.find((l) => l.product.name === name);
 
   const buy = () => {
     const { id } = litho;
     redirectToCheckout({
       lineItems: [{ price: id, quantity: 1 }],
-      mode: 'payment',
-      successUrl: 'https://authouart.fr/success',
-      cancelUrl: 'https://authouart.fr/cancel',
-      billingAddressCollection: 'required',
+      mode: "payment",
+      successUrl: "https://authouart.fr/success",
+      cancelUrl: "https://authouart.fr/cancel",
+      billingAddressCollection: "required",
       shippingAddressCollection: {
         allowedCountries: [
-          'FR',
-          'DE',
-          'GB',
-          'IT',
-          'ES',
-          'PT',
-          'US',
-          'CA',
-          'NO',
-          'IE'
-        ]
-      }
-    }).then(result => {
+          "FR",
+          "DE",
+          "GB",
+          "IT",
+          "ES",
+          "PT",
+          "US",
+          "CA",
+          "NO",
+          "IE",
+        ],
+      },
+    }).then((result) => {
       setError(result.error.message);
     });
   };
@@ -52,7 +52,7 @@ const Litho = ({ classes, match }) => {
     const { product, unit_amount } = litho;
     const {
       metadata: { year },
-      images
+      images,
     } = product;
 
     return (
@@ -75,10 +75,11 @@ const Litho = ({ classes, match }) => {
             <div className={classes.buy}>
               <span className={classes.price}>{formatPrice(unit_amount)}</span>
               <Button
+                disabled
                 onClick={buy}
                 classes={{
                   root: classes.buyButton,
-                  label: classes.buyButtonLabel
+                  label: classes.buyButtonLabel,
                 }}
               >
                 Acheter
@@ -118,7 +119,7 @@ const Litho = ({ classes, match }) => {
 
 Litho.propTypes = {
   classes: PropTypes.object.isRequired,
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Litho);
