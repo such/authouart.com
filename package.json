@@ -25,8 +25,8 @@
     "start": "react-scripts start",
     "serve": "netlify-lambda serve src/lambda --config ./webpack.functions.js",
     "build": "yarn build:app && yarn build:lambda",
-    "build:app": "react-scripts build",
-    "build:lambda": "netlify-lambda build src/lambda --config ./webpack.functions.js",
+    "build:app": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "build:lambda": "NODE_OPTIONS=--openssl-legacy-provider netlify-lambda build src/lambda --config ./webpack.functions.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "netlify": "netlify"
