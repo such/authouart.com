@@ -1,18 +1,17 @@
 ## PARIS
 
-Galerie Pascal Gabert<br />
-11 bis rue du Perche<br />
-75003 PARIS<br />
-Tel : +33 (0)1 44 54 09 44<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+33 (0)6 71 10 91 33<br />
+Galerie Pascal GABERT<br />
+23 impasse Des Roquettes<br />
+83390 CUERS<br />
+France<br />
+Tel.: +33 (0)6 71 10 91 33<br />
 Email : <a href="mailto:galerie.gabert@wanadoo.fr">galerie.gabert@wanadoo.fr</a><br />
 
-ATELIER de lithographies S.G.<br />
-Viaduc des Arts<br />
-63 avenue Daumesnil<br />
-75012 Paris<br />
-Tel : +33 (0)9 81 83 58 67<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+33 (0)6 08 90 37 31<br />
+Atelier GUILBAUD - CHANEY<br />  
+87 rue de Picou<br />
+24130 La Force Dordogne<br />
+France<br />
+Tel : +33 (0)6 08 90 37 31<br />
 Email : <a href="mailto:ateliers@stephaneguilbaud.com">ateliers@stephaneguilbaud.com</a><br />
 
 ## ROUEN
